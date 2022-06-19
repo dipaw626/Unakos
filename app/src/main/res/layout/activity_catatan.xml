@@ -4,11 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.CatatanActivity">
+    tools:context=".catatan.CatatanActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="500dp"
+            android:layout_height="980dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/catatandandetail"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="-89dp" />
 
         <TextView
             android:id="@+id/textView"
@@ -18,8 +28,9 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="50dp"
             android:text="Catatan Keuangan"
+            android:fontFamily="@font/arlrdbd"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +45,6 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="32dp"
             android:backgroundTint="#CCFFCC"
-            android:fontFamily="arial"
             android:text="Pengeluaran"
             android:textColor="@color/black"
             android:textSize="13sp"
@@ -51,7 +61,6 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:backgroundTint="#ffffff"
-            android:fontFamily="arial"
             android:text="Pemasukan"
             android:textColor="@color/black"
             android:textSize="13sp"
@@ -60,23 +69,6 @@
             app:layout_constraintStart_toEndOf="@+id/btnCttOut"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:ignore="MissingConstraints" />
-
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            tools:ignore="MissingConstraints"></FrameLayout>
-
-        <ImageView
-            android:id="@+id/ivadd"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/add_icon" />
 
         <ImageView
             android:id="@+id/ivBack"
@@ -88,24 +80,26 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/back" />
 
+<!--        <ImageView-->
+<!--            android:id="@+id/ivadd"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginBottom="50dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:srcCompat="@drawable/add_icon" />-->
+
+        <FrameLayout
+            android:id="@+id/cttcontainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:ignore="MissingConstraints"></FrameLayout>
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rvCatatan"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="300dp"-->
-<!--        android:layout_marginStart="15dp"-->
-<!--        android:layout_marginEnd="15dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        tools:layout_editor_absoluteY="210dp">-->
-
-<!--    </androidx.recyclerview.widget.RecyclerView>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

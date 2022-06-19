@@ -1,4 +1,5 @@
-//package com.mobile.finalprojectbp2.adapter
+//package com.mobile.finalprojectbp2.Main
+//
 //
 //import android.view.LayoutInflater
 //import android.view.View
@@ -8,7 +9,7 @@
 //import androidx.recyclerview.widget.RecyclerView
 //import com.mobile.finalprojectbp2.R
 //
-//class CatatanAdapter:RecyclerView.Adapter<CatatanAdapter.ViewHolder>() {
+//class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 //
 //    //declare dataset array
 //    private var foto = intArrayOf(R.drawable.document_signed, R.drawable.document_signed, R.drawable.document_signed)
@@ -32,7 +33,7 @@
 //    }
 //
 //    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-//        val view = LayoutInflater.from(parent.context).inflate(R.layout.cardview_catatan, parent, false)
+//        val view = LayoutInflater.from(parent.context).inflate(R.layout.cardview_main, parent, false)
 //        return ViewHolder(view)
 //    }
 //

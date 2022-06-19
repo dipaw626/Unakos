@@ -1,4 +1,4 @@
-package com.mobile.finalprojectbp2.adapter
+package com.mobile.finalprojectbp2.catatan
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mobile.finalprojectbp2.R
 
-class MainAdapter:RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class CatatanAdapterOut:RecyclerView.Adapter<CatatanAdapterOut.ViewHolder>() {
 
     //declare dataset array
     private var foto = intArrayOf(R.drawable.document_signed, R.drawable.document_signed, R.drawable.document_signed)
@@ -32,7 +32,7 @@ class MainAdapter:RecyclerView.Adapter<MainAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.cardview_main, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.cardview_catatan_out, parent, false)
         return ViewHolder(view)
     }
 

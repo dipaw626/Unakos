@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.DetailActivity">
+    tools:context=".detail.DetailActivity">
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="500dp"
+        android:layout_height="980dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/catatandandetail"
+        tools:layout_editor_absoluteY="-87dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView6"
@@ -12,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="Detail Pengeluaran"
-        android:textColor="@color/black"
+        android:fontFamily="@font/arlrdbd"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +65,7 @@
                 app:srcCompat="@drawable/document_signed" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/tvJudul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -60,6 +73,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Judul Catatan Transaksi"
+                android:fontFamily="@font/arlrdbd"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +103,7 @@
         android:text="Catatan"
         android:textSize="15sp"
         android:textColor="@color/black"
+        android:fontFamily="@font/arlrdbd"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
 
@@ -129,6 +144,7 @@
         android:text="Tanggal"
         android:textSize="15sp"
         android:textColor="@color/black"
+        android:fontFamily="@font/arlrdbd"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
 
@@ -140,6 +156,7 @@
         android:layout_marginTop="48dp"
         android:text="Jumlah"
         android:textColor="@color/black"
+        android:fontFamily="@font/arlrdbd"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView8"
@@ -187,6 +204,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="24dp"
         android:text="Bukti Transaksi"
+        android:fontFamily="@font/arlrdbd"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
@@ -228,7 +246,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
-        app:cardBackgroundColor="#E6E6E6"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="7dp"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toTopOf="@+id/btnSave"
@@ -265,7 +283,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        app:cardBackgroundColor="#E6E6E6"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="7dp"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toTopOf="@+id/btnSave"
@@ -301,7 +319,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="16dp"
-        app:cardBackgroundColor="#E6E6E6"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="7dp"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toTopOf="@+id/btnSave"
@@ -325,6 +343,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
 
 
 

@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProjectBP2">
         <activity
-            android:name=".activity.TambahActivity"
+            android:name=".detail.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".tambah.TambahActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CatatanActivity"
+            android:name=".catatan.CatatanActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DetailActivity"
+            android:name=".Main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

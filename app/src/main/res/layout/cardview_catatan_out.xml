@@ -4,11 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="#E6E6E6"
+    app:cardBackgroundColor="@color/white"
     android:layout_marginLeft="32dp"
-    android:layout_marginBottom="1dp"
+    android:layout_marginBottom="4dp"
     android:layout_marginRight="32dp"
     app:cardCornerRadius="10dp"
+    android:id="@+id/cvCttout"
     app:cardElevation="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,6 +34,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="36dp"
             android:text="Nama data"
+            android:fontFamily="@font/arlrdbd"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold"
@@ -49,6 +51,7 @@
             android:text="waktu"
             android:textColor="@color/black"
             android:textSize="9sp"
+            android:fontFamily="@font/arlrdbd"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/item_foto"
@@ -64,6 +67,7 @@
             android:text="cost"
             android:textColor="#F50000"
             android:textSize="9sp"
+            android:fontFamily="@font/arlrdbd"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.721"

@@ -4,18 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".Main.MainActivity">
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="72dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/imageView100"
+        android:layout_width="500dp"
+        android:layout_height="980dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.337"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_account_circle_24"
+        app:srcCompat="@drawable/mainpage"
         tools:ignore="MissingConstraints" />
+
+    <!--        <ImageView-->
+    <!--        android:id="@+id/imageView4"-->
+    <!--        android:layout_width="72dp"-->
+    <!--        android:layout_height="62dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@drawable/ic_baseline_account_circle_24"-->
+    <!--        tools:ignore="MissingConstraints" />-->
 
     <TextView
         android:id="@+id/textView2"
@@ -24,33 +35,15 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:text="Hai, Kamu"
-        android:textColor="@color/black"
+        android:fontFamily="@font/arlrdbd"
+        android:text="Welcome in Unakos!"
+        android:textColor="@color/white"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/imageView7"-->
-    <!--        android:layout_width="33dp"-->
-    <!--        android:layout_height="43dp"-->
-    <!--        app:srcCompat="@drawable/list"-->
-    <!--        tools:layout_editor_absoluteX="305dp"-->
-    <!--        tools:layout_editor_absoluteY="16dp" />-->
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="33dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="28dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lines"
         tools:ignore="MissingConstraints" />
 
     <androidx.cardview.widget.CardView
@@ -78,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Uang Kamu Sekarang"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -91,6 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Rp1.000.000"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -120,7 +115,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:cardBackgroundColor="#E6E6E6"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="6dp"
         app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,6 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Aktivitas"
                 android:textColor="@color/black"
                 android:textSize="14sp"
@@ -153,6 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="16dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="June 2022"
                 android:textColor="@color/black"
                 android:textSize="14sp"
@@ -212,6 +209,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Pemasukan"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -225,6 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Rp2.000.000"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -238,6 +237,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Pengeluaran"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -252,6 +252,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Rp1.000.000"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -279,7 +280,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:cardBackgroundColor="#E6E6E6"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="6dp"
         app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -299,6 +300,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Aktivitas Terakhir"
                 android:textColor="@color/black"
                 android:textSize="14sp"
@@ -313,13 +315,24 @@
         android:layout_width="355dp"
         android:layout_height="244dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView4"
         tools:ignore="MissingConstraints" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView15"-->
+    <!--        android:layout_width="33dp"-->
+    <!--        android:layout_height="30dp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:layout_marginEnd="28dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@drawable/list" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
