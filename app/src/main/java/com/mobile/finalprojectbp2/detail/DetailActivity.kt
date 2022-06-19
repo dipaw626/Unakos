@@ -17,6 +17,8 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
+        supportActionBar?.hide()
+
         //get data dari string intent judul cardview yg diclick
 //        supportActionBar!!.title = intent.getStringExtra("tvJudul")
 

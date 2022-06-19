@@ -15,16 +15,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/catatandandetail"
-        tools:layout_editor_absoluteY="-87dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-87dp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Detail Pengeluaran"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/arlrdbd"
+        android:text="Detail Pengeluaran"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView8"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="80dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="40dp"
@@ -54,8 +54,8 @@
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
@@ -72,9 +72,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Judul Catatan Transaksi"
                 android:fontFamily="@font/arlrdbd"
-                android:textSize="15sp"
+                android:text="Judul Catatan Transaksi"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView8"
@@ -84,54 +84,38 @@
     </androidx.cardview.widget.CardView>
 
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/im_notebook" />
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:text="Catatan"
-        android:textSize="15sp"
-        android:textColor="@color/black"
         android:fontFamily="@font/arlrdbd"
+        android:text="Catatan"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
 
     <EditText
         android:id="@+id/editTextNumber2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="20dp"
         android:ems="8"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.235"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="20dp"
         android:ems="8"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -141,10 +125,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:text="Tanggal"
-        android:textSize="15sp"
-        android:textColor="@color/black"
         android:fontFamily="@font/arlrdbd"
+        android:text="Tanggal"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
 
@@ -154,57 +138,64 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="48dp"
+        android:fontFamily="@font/arlrdbd"
         android:text="Jumlah"
         android:textColor="@color/black"
-        android:fontFamily="@font/arlrdbd"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView8"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/im_calendar" />
-
     <EditText
         android:id="@+id/editTextDate2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="20dp"
         android:ems="8"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="48dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView8"
         app:srcCompat="@drawable/im_duit"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/im_calendar" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/im_notebook" />
+
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
-        android:text="Bukti Transaksi"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/arlrdbd"
+        android:text="Bukti Transaksi"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
@@ -215,13 +206,13 @@
         android:layout_height="47dp"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="220dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#FF0000"
         android:text="Hapus"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -230,13 +221,13 @@
         android:layout_height="47dp"
         android:layout_marginStart="220dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#5FB471"
-        android:textStyle="normal|bold"
         android:text="Kembali"
+        android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.cardview.widget.CardView
@@ -244,8 +235,8 @@
         android:layout_width="87dp"
         android:layout_height="69dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="7dp"
         app:cardElevation="5dp"
@@ -280,9 +271,9 @@
         android:layout_width="87dp"
         android:layout_height="69dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="7dp"
         app:cardElevation="5dp"
@@ -316,9 +307,9 @@
         android:id="@+id/cardView7"
         android:layout_width="87dp"
         android:layout_height="69dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="7dp"
         app:cardElevation="5dp"
@@ -343,8 +334,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

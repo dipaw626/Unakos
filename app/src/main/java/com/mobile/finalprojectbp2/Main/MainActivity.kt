@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.hide()
+
         //Intent
         ivAdd = findViewById(R.id.ivadd)
         ivAdd.setOnClickListener {

@@ -32,9 +32,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
         android:fontFamily="@font/arlrdbd"
         android:text="Welcome in Unakos!"
         android:textColor="@color/white"
@@ -48,7 +46,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="92dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
@@ -70,14 +68,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
                 android:fontFamily="@font/arlrdbd"
                 android:text="Uang Kamu Sekarang"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -110,7 +107,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -134,12 +131,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="6dp"
                 android:fontFamily="@font/arlrdbd"
                 android:text="Aktivitas"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -147,13 +144,13 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/arlrdbd"
                 android:text="June 2022"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,7 +159,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="166dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -208,14 +205,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="16dp"
                 android:fontFamily="@font/arlrdbd"
                 android:text="Pemasukan"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -236,14 +232,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="16dp"
                 android:fontFamily="@font/arlrdbd"
                 android:text="Pengeluaran"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView6"
-                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                app:layout_constraintTop_toTopOf="@+id/imageView6"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -275,7 +270,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView4"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -299,12 +294,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="6dp"
                 android:fontFamily="@font/arlrdbd"
                 android:text="Aktivitas Terakhir"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -312,7 +307,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLastActivity"
-        android:layout_width="355dp"
+        android:layout_width="match_parent"
         android:layout_height="244dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"

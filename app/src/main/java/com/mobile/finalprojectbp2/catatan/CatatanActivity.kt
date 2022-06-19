@@ -27,6 +27,8 @@ class CatatanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catatan)
 
+        supportActionBar?.hide()
+
         //Intent
 //        ivAdd = findViewById(R.id.ivadd)
 //        ivAdd.setOnClickListener{

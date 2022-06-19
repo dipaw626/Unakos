@@ -22,6 +22,8 @@ class TambahActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah)
 
+        supportActionBar?.hide()
+
         //intent
         ivback = findViewById(R.id.ivBack)
         ivback.setOnClickListener{

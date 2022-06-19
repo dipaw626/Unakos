@@ -5,9 +5,9 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="@color/white"
-    android:layout_marginLeft="32dp"
+    android:layout_marginLeft="16dp"
     android:layout_marginBottom="4dp"
-    android:layout_marginRight="32dp"
+    android:layout_marginRight="16dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="20dp"
     android:id="@+id/cvMain"
@@ -19,12 +19,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="133dp">
+        android:layout_height="80dp">
 
         <ImageView
             android:id="@+id/item_foto"
-            android:layout_width="58dp"
-            android:layout_height="56dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
@@ -37,10 +37,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/arlrdbd"
             android:text="Nama data"
             android:textColor="@color/black"
-            android:fontFamily="@font/arlrdbd"
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/item_foto"
@@ -53,31 +53,29 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="28dp"
+            android:fontFamily="@font/arlrdbd"
             android:text="waktu"
             android:textColor="@color/black"
             android:textSize="9sp"
-            android:fontFamily="@font/arlrdbd"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/item_foto"
-            app:layout_constraintTop_toBottomOf="@+id/item_nama" />
+            app:layout_constraintTop_toBottomOf="@+id/item_nama"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/item_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginEnd="8dp"
-            android:text="cost"
-            android:textColor="#F50000"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="28dp"
             android:fontFamily="@font/arlrdbd"
+            android:text="cost"
+            android:textColor="#33CC33"
             android:textSize="9sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.721"
-            app:layout_constraintStart_toEndOf="@+id/item_tgl"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

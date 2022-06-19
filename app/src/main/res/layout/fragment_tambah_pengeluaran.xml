@@ -17,36 +17,55 @@
 
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3"
-                app:srcCompat="@drawable/im_notebook" />
-
-            <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="48dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="64dp"
                 android:layout_marginTop="192dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_edit" />
 
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:srcCompat="@drawable/im_calendar" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:srcCompat="@drawable/im_notebook" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:srcCompat="@drawable/im_duit" />
+
             <EditText
-                android:id="@+id/etJudulCttOut"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:id="@+id/etJudulCttIn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="155dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="20dp"
-                android:ems="8"
+                android:layout_marginEnd="70dp"
                 android:inputType="textPersonName"
+                android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.247"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -56,11 +75,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Catatan"
                 android:textColor="@color/black"
-                android:fontFamily="@font/arlrdbd"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/etTglCttOut" />
+                app:layout_constraintTop_toBottomOf="@+id/etTglCttIn" />
 
             <TextView
                 android:id="@+id/textView"
@@ -68,37 +87,35 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="192dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Judul Catatan"
                 android:textColor="@color/black"
-                android:fontFamily="@font/arlrdbd"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/etJmlCttOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:id="@+id/etJmlCttIn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="155dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="70dp"
                 android:ems="8"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.235"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <EditText
-                android:id="@+id/etKetCttOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:id="@+id/etKetCttIn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="155dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="70dp"
                 android:ems="8"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.247"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -108,11 +125,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Tanggal"
                 android:textColor="@color/black"
-                android:fontFamily="@font/arlrdbd"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/etJmlCttOut" />
+                app:layout_constraintTop_toBottomOf="@+id/etJmlCttIn" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -120,57 +137,36 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Jumlah"
                 android:textColor="@color/black"
-                android:fontFamily="@font/arlrdbd"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/etJudulCttOut" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                app:srcCompat="@drawable/im_calendar" />
+                app:layout_constraintTop_toBottomOf="@+id/etJudulCttIn" />
 
             <EditText
-                android:id="@+id/etTglCttOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:id="@+id/etTglCttIn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="155dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="70dp"
                 android:ems="8"
                 android:inputType="datetime"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.247"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
-                app:srcCompat="@drawable/im_duit" />
 
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/arlrdbd"
                 android:text="Bukti Transaksi"
                 android:textColor="@color/black"
-                android:fontFamily="@font/arlrdbd"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etKetCttOut" />
+                app:layout_constraintTop_toBottomOf="@+id/etKetCttIn" />
 
             <Button
                 android:id="@+id/btnSave"
@@ -178,7 +174,7 @@
                 android:layout_height="47dp"
                 android:layout_marginStart="48dp"
                 android:layout_marginEnd="40dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="#5FB471"
                 android:text="Save"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -191,8 +187,8 @@
                 android:layout_width="87dp"
                 android:layout_height="69dp"
                 android:layout_marginStart="48dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="7dp"
                 app:cardElevation="5dp"
@@ -227,9 +223,9 @@
                 android:layout_width="87dp"
                 android:layout_height="69dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="24dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="7dp"
                 app:cardElevation="5dp"
@@ -263,9 +259,9 @@
                 android:id="@+id/cardView7"
                 android:layout_width="87dp"
                 android:layout_height="69dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="40dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="24dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="7dp"
                 app:cardElevation="5dp"
