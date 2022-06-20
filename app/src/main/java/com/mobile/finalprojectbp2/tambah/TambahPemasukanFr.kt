@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import com.mobile.finalprojectbp2.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,20 +25,40 @@ class TambahPemasukanFr : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var  image: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+
+
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tambah_pemasukan, container, false)
+        val view = inflater.inflate(R.layout.fragment_tambah_pemasukan, container, false)
+
+        //instance
+//        image = view.findViewById(R.id.ivBuktiTbh)
+//        val etName: EditText = view.findViewById(R.id.tvJudul)
+//        val etNominal: EditText = view.findViewById(R.id.etDetailNominal)
+//        val etTanggal: EditText = view.findViewById(R.id.etDetailTgl)
+//        val etCatatan: EditText = view.findViewById(R.id.etDetailnote)
+//        val btnhapus: Button = view.findViewById(R.id.btnHapus)
+
+
+        return view
+
+
     }
 
     companion object {
@@ -56,5 +79,9 @@ class TambahPemasukanFr : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+
+
+
+        val IMAGE_REQUEST_CODE = 100
     }
 }
