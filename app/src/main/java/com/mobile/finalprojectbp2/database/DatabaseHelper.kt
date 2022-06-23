@@ -7,12 +7,15 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.graphics.Bitmap
 import android.widget.Toast
 import com.mobile.finalprojectbp2.detail.detailModel
+import com.mobile.finalprojectbp2.tambah.tambahModel
 import java.io.ByteArrayOutputStream
 
 class DatabaseHelper(var context: Context): SQLiteOpenHelper(
     context,DATABASE_NAME, null,DATABASE_VERSION
 ) {
+
     companion object{
+
         private val DATABASE_NAME = "FP"
         private val DATABASE_VERSION = 1
 
@@ -47,6 +50,7 @@ class DatabaseHelper(var context: Context): SQLiteOpenHelper(
     }
 
 
+    //add detailactivity
     fun addDetail(detail:detailModel){
         val db = this.writableDatabase
         val values = ContentValues()
@@ -73,6 +77,36 @@ class DatabaseHelper(var context: Context): SQLiteOpenHelper(
         db.close()
 
     }
+
+    //add tambahactivity fragment
+    fun addTambah(tambah:tambahModel){
+        val db = this.writableDatabase
+        val values = ContentValues()
+//        values.put(COLUMN_ID_IN, tambah.id)
+        values.put(COLUMN_JUDUL_IN, tambah.name)
+        values.put(COLUMN_NOMINAL_IN, tambah.nominal)
+        values.put(COLUMN_KETERANGAN_IN, tambah.keterangan)
+//        values.put(COLUMN_WAKTU_IN, tambah.tanggal)
+        //prepare image
+        val byteOutputStream = ByteArrayOutputStream()
+        val imageInByte: ByteArray
+        tambah.image.compress(Bitmap.CompressFormat.JPEG,100,byteOutputStream)
+        imageInByte = byteOutputStream.toByteArray()
+        values.put(COLUMN_IMAGE_IN, imageInByte)
+
+        val result = db.insert(TABLE_PEMASUKAN,null,values)
+        //show message
+        if(result==(0).toLong()) {
+            Toast.makeText(context, "Add menu Failed", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            Toast.makeText(context, "Add menu Success", Toast.LENGTH_SHORT).show()
+        }
+        db.close()
+
+    }
+
+
 
 
 }

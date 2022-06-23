@@ -100,7 +100,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <EditText
-            android:id="@+id/etKetCttIn"
+            android:id="@+id/etTbhNoteIn"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginStart="155dp"
@@ -161,7 +161,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <Button
-            android:id="@+id/btnSave"
+            android:id="@+id/btnTbhSave"
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:layout_marginStart="48dp"
@@ -197,7 +197,17 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/ivBuktiTbh"
+                    android:id="@+id/ivTbhBackground"
+                    android:layout_width="87dp"
+                    android:layout_height="69dp"
+                    android:src="@drawable/whitefoto"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivAddImageTbh"
                     android:layout_width="31dp"
                     android:layout_height="30dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -207,6 +217,9 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/add"
                     tools:ignore="DuplicateIds" />
+
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
