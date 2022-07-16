@@ -17,7 +17,7 @@
         android:layout_height="80dp">
 
         <ImageView
-            android:id="@+id/item_foto"
+            android:id="@+id/item_fotoctt"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="24dp"
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/item_nama"
+            android:id="@+id/item_namactt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -38,11 +38,11 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/item_foto"
+            app:layout_constraintStart_toEndOf="@+id/item_fotoctt"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/item_tgl"
+            android:id="@+id/item_tglctt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -54,12 +54,12 @@
             android:textSize="9sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/item_foto"
-            app:layout_constraintTop_toBottomOf="@+id/item_nama"
+            app:layout_constraintStart_toEndOf="@+id/item_fotoctt"
+            app:layout_constraintTop_toBottomOf="@+id/item_namactt"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/item_cost"
+            android:id="@+id/item_costctt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"

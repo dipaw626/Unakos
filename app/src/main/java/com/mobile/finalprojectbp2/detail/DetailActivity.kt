@@ -1,79 +1,211 @@
 package com.mobile.finalprojectbp2.detail
 
+import android.R.attr.description
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.mobile.finalprojectbp2.Main.MainActivity
 import com.mobile.finalprojectbp2.R
+import com.mobile.finalprojectbp2.database.DatabaseHelper
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.io.ByteArrayInputStream
+
+
+//import kotlin.android.synthetic.detail.detail_activity.*
 //import com.bumptech.glide.Glide
 
 class DetailActivity : AppCompatActivity() {
 
-    //all intent
+    //all instance
     private lateinit var btnback: Button
+    private lateinit var tvIdin: TextView
+    private lateinit var tvIdout: TextView
+    private lateinit var tvjudul: TextView
+    private lateinit var tvNominal: TextView
+    private lateinit var tvTanggal: TextView
+    private lateinit var tvCatatan: TextView
+    private lateinit var imagedetail: ImageView
+    private lateinit var btnhapus: Button
 
-    //image
-//    lateinit var  image: ImageView
-//    companion object{
-//        val IMAGE_REQUEST_CODE = 100
-//    }
+    //
+    private var idin: Int = 0
+    private var namain: String = ""
+    private var idout: Int = 0
+    private var namaout: String = ""
+
+    companion object{
+        val IMAGE_REQUEST_CODE = 100
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         supportActionBar?.hide()
 
+        //instance intent
+        val btnback = findViewById<Button>(R.id.btnBack)
+
+        //intent
+        btnback.setOnClickListener{
+            val intent = Intent(this@DetailActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         //instance
-//        image = findViewById(R.id.ivDetailbukti)
-//        val tvName: EditText = findViewById(R.id.tvJudul)
-//        val tvNominal: EditText = findViewById(R.id.tvDetailNominal)
-//        val tvTanggal: EditText = findViewById(R.id.tvDetailTgl)
-//        val tvCatatan: EditText = findViewById(R.id.tvDetailnote)
-//        val btnhapus: Button = findViewById(R.id.btnHapus)
-//        val ivAddImage: ImageView = findViewById(R.id.ivDetailbukti)
-//        val textId: EditText = findViewById(R.id.menuId)
-
-        //event saat iv di klik
-//        image.setOnClickListener{
-//            pickImageGalery()
-//        }
-
-        //get data dari string intent judul cardview yg diclick
-//        supportActionBar!!.title = intent.getStringExtra("tvJudul")
+        tvjudul = findViewById(R.id.tvJudul)
+        tvNominal = findViewById(R.id.tvDetailNominal)
+        tvTanggal = findViewById(R.id.tvDetailTgl)
+        tvCatatan = findViewById(R.id.tvDetailnote)
+        imagedetail = findViewById(R.id.ivDetailbukti)
+        btnhapus = findViewById(R.id.btnHapus)
+        tvIdin = findViewById(R.id.tvin)
+        tvIdout = findViewById(R.id.tvout)
 
 
         //get data gambar dari intent cardview yg diclick
-//        Glide.with(this)
-//            .load(intent.getStringExtra("intent_image"))
-//            .placeholder(R.drawable.im_calendar)
-//            .error(R.drawable.im_calendar)
-//            .into( imageView )
+        //pemasukan
+        val extras = intent.extras
+        if (extras!!.containsKey("COLUMN_ID_IN")) {
+            idin = intent.getIntExtra("COLUMN_ID_IN",0)
+            namain = intent.getStringExtra("COLUMN_JUDUL_IN").toString()
+            var nominalin: Int = intent.getIntExtra("COLUMN_NOMINAL_IN", 0)
+            var tanggalin = intent.getStringExtra("COLUMN_WAKTU_IN")
+            var catatansin = intent.getStringExtra("COLUMN_KETERANGAN_IN")
+            var imagein = intent.getByteArrayExtra("COLUMN_IMAGE_IN") // databasehelper image masi bytearray, convert nya di activity nya.
+            //proses tipe image database-user = blob - bytearray - bitmap dan sebaliknya
+            //convert image yg dari show di database bentuk bytearray
+            val byteInputStream = ByteArrayInputStream(imagein)
+            val imagebmp: Bitmap = BitmapFactory.decodeStream(byteInputStream)
 
+            tvjudul.setText(namain)
+            tvTanggal.setText(tanggalin)
+            tvCatatan.setText(catatansin)
+            imagedetail.setImageBitmap(imagebmp)
+            tvNominal.setText(""+nominalin)
+            tvIdin.setText(""+idin)
 
+            btnhapus.setOnClickListener{
+                deleteIn()
+            }
 
-        //intent
-        btnback = findViewById(R.id.btnBack)
-        btnback.setOnClickListener{
-            val DetailBackMain = Intent(this, MainActivity::class.java)
-            startActivity(DetailBackMain)
         }
+
+        else if (extras!!.containsKey("COLUMN_ID_OUT") && idout != null) {
+            idout = intent.getIntExtra("COLUMN_ID_OUT",0)
+            namaout = intent.getStringExtra("COLUMN_JUDUL_OUT").toString()
+            var nominalout: Int = intent.getIntExtra("COLUMN_NOMINAL_OUT", 0)
+            var tanggalout = intent.getStringExtra("COLUMN_WAKTU_OUT")
+            var catatansout = intent.getStringExtra("COLUMN_KETERANGAN_OUT")
+            var imageout = intent.getByteArrayExtra("COLUMN_IMAGE_OUT") // databasehelper image masi bytearray, convert nya di activity nya.
+
+            //proses tipe image database-user(inputoutstream) = blob - bytearray - bitmap dan sebaliknya
+            //convert image yg dari show di database bentuk bytearray
+            val byteInputStream = ByteArrayInputStream(imageout)
+            val imagebmp: Bitmap = BitmapFactory.decodeStream(byteInputStream)
+
+            tvjudul.setText(namaout)
+            tvTanggal.setText(tanggalout)
+            tvCatatan.setText(catatansout)
+            imagedetail.setImageBitmap(imagebmp)
+            tvNominal.setText(""+nominalout)
+            tvIdout.setText(""+idout)
+
+            btnhapus.setOnClickListener{
+                deleteOut()
+            }
+
+
+        }
+
+        //-------------jan dihapus literasi-----------------
+//        Glide.with(this)
+//            .load(image)
+//            .placeholder(R.drawable.whitefoto)
+//            .error(R.drawable.whitefoto) //jk error nampilin ini
+//            .into(imagedetail)
+
+//        var imageArray: ByteArray? =intent.getByteArrayExtra("COLUMN_IMAGE_IN")
+//        var imagebmp: Bitmap
+
+        //convert bytearray to bitmap
+//        val byteInputStream = ByteArrayInputStream(imageArray)
+//        imagebmp = BitmapFactory.decodeStream(byteInputStream)
+//        imagedetail.setImageBitmap(imagebmp)
+//
+
+        //get data dari string intent judul cardview yg diclick
+//        var nama = intent.getStringExtra("COLUMN_JUDUL_IN")
+//        var nominal = intent.getStringExtra("COLUMN_NOMINAL_IN")
+//        var tanggal = intent.getStringExtra("COLUMN_WAKTU_IN")
+//        var catatans = intent.getStringExtra("COLUMN_KETERANGAN_IN")
+
+//        Toast.makeText(this, nama.toString(), Toast.LENGTH_SHORT).show()
+
+
+
+        //-------------------------SAMPE SINII______________________________
+
 
     }
 
-//    private fun pickImageGalery() {
-//        val intent = Intent(Intent.ACTION_PICK)
-//        intent.type = "image/"
-//        startActivityForResult(intent, IMAGE_REQUEST_CODE)
-//    }
-//
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK) {
-//            image.setImageURI(data?.data)
-//        }
-//    }
+
+    fun deleteIn() {
+        val db = DatabaseHelper(this)
+        val dialog = AlertDialog.Builder(this)
+
+        dialog.apply {
+            setTitle("Konfirmasi Hapus")
+            setMessage("Yakin hapus "+ namain + " ?")
+            setNegativeButton("Batal") { dialogInterface, i ->
+                dialogInterface.dismiss()
+            }
+            setPositiveButton("Hapus") { dialogInterface, i ->
+                CoroutineScope(Dispatchers.IO).launch {
+                    db.deleteIDin(idin.toString())
+//                    Toast.makeText(application, "Delete Success ", Toast.LENGTH_SHORT).show()
+                    dialogInterface.dismiss()
+
+                }
+            }
+        }
+        dialog.show()
+        db.close()
+    }
+
+    fun deleteOut() {
+        val db = DatabaseHelper(this)
+        val dialog = AlertDialog.Builder(this)
+
+        dialog.apply {
+            setTitle("Konfirmasi Hapus")
+            setMessage("Yakin hapus "+ namaout + " ?")
+            setNegativeButton("Batal") { dialogInterface, i ->
+                dialogInterface.dismiss()
+            }
+            setPositiveButton("Hapus") { dialogInterface, i ->
+                CoroutineScope(Dispatchers.IO).launch {
+                    db.deleteIDout(idout.toString())
+//                    Toast.makeText(this, "Delete Success ", Toast.LENGTH_SHORT).show()
+                    dialogInterface.dismiss()
+
+                }
+            }
+        }
+        dialog.show()
+        db.close()
+    }
+
 
 }
+
+
+
+

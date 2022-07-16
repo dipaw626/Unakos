@@ -16,6 +16,289 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="-102dp" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="-48dp">
+
+
+            <RadioGroup
+                android:id="@+id/rgTambah"
+                android:layout_width="284dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/rbTbhPengeluaran"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/arlrdbd"
+                        android:text="Pengeluaran"
+                        android:textSize="12sp"
+                        android:onClick="onRadioButtonClicked"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.23"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/rbTbhPemasukan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/arlrdbd"
+                        android:text="Pemasukan"
+                        android:textSize="12sp"
+                        android:onClick="onRadioButtonClicked"
+                        app:layout_constraintStart_toEndOf="@+id/rbTbhPengeluaran"
+                        app:layout_constraintTop_toTopOf="@+id/rbTbhPengeluaran" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/id"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rgTambah"
+                app:srcCompat="@drawable/id" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:srcCompat="@drawable/im_calendar" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:srcCompat="@drawable/im_notebook" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:srcCompat="@drawable/im_duit" />
+
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:fontFamily="@font/arlrdbd"
+                android:text="Catatan"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+            <TextView
+                android:id="@+id/ik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:fontFamily="@font/arlrdbd"
+                android:text="ID"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/id"
+                app:layout_constraintTop_toTopOf="@+id/id" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:fontFamily="@font/arlrdbd"
+                android:text="Judul Catatan"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+            <EditText
+                android:id="@+id/etIDTbhIn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="155dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="70dp"
+                android:inputType="text"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/id"
+                app:layout_constraintTop_toBottomOf="@+id/ik" />
+
+            <EditText
+                android:id="@+id/etJudulTbhIn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="155dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="70dp"
+                android:inputType="textPersonName"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+            <EditText
+                android:id="@+id/etJmlTbhIn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="155dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="70dp"
+                android:ems="8"
+                android:inputType="number"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <EditText
+                android:id="@+id/etTbhNoteIn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="155dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="70dp"
+                android:ems="8"
+                android:inputType="textPersonName"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:fontFamily="@font/arlrdbd"
+                android:text="Tanggal"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:fontFamily="@font/arlrdbd"
+                android:text="Jumlah"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+            <EditText
+                android:id="@+id/etTglTbhIn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="155dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="70dp"
+                android:ems="8"
+                android:inputType="datetime"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/arlrdbd"
+                android:text="Bukti Transaksi"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+            <Button
+                android:id="@+id/btnTbhSave"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#5FB471"
+                android:text="Save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.7"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/ivTbhBackground"
+                android:layout_width="139dp"
+                android:layout_height="98dp"
+                android:src="@drawable/whitefoto"
+                app:layout_constraintBottom_toTopOf="@+id/btnTbhSave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <ImageView
+                android:id="@+id/ivAddImageTbh"
+                android:layout_width="38dp"
+                android:layout_height="33dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivTbhBackground"
+                app:layout_constraintEnd_toEndOf="@+id/ivTbhBackground"
+                app:srcCompat="@drawable/add"
+                tools:ignore="DuplicateIds" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
     <ImageView
         android:id="@+id/ivBack"
         android:layout_width="39dp"
@@ -35,45 +318,38 @@
         android:text="Tambah Catatan"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btntmbhOut"
-        android:layout_width="wrap_content"
-        android:layout_height="47dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#CCFFCC"
-        android:text="Pengeluaran"
-        android:textColor="@color/black"
-        android:textStyle="normal|bold"
-        app:layout_constraintEnd_toStartOf="@+id/btntmbhIn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <Button
-        android:id="@+id/btntmbhIn"
-        android:layout_width="wrap_content"
-        android:layout_height="47dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="#ffffff"
-        android:text="Pemasukan"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 
-    <FrameLayout
-        android:id="@+id/tambahcontainer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        tools:ignore="MissingConstraints"></FrameLayout>
 
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbTbhPengeluaran"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="72dp"-->
+<!--            android:fontFamily="@font/arlrdbd"-->
+<!--            android:text="Pengeluaran"-->
+<!--            android:textSize="12sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.255"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbTbhPemasukan"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:fontFamily="@font/arlrdbd"-->
+<!--            android:text="Pemasukan"-->
+<!--            android:textSize="12sp"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/rbTbhPengeluaran"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/rbTbhPengeluaran" />-->
+
+    
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

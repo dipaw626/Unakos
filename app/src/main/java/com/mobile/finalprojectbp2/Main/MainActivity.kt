@@ -1,5 +1,6 @@
 package com.mobile.finalprojectbp2.Main
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,24 +11,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mobile.finalprojectbp2.R
 import com.mobile.finalprojectbp2.catatan.CatatanActivity
+import com.mobile.finalprojectbp2.database.DatabaseHelper
+//import com.mobile.finalprojectbp2.catatan.CatatanActivity
 import com.mobile.finalprojectbp2.detail.DetailActivity
 
 
 class MainActivity : AppCompatActivity() {
 
-    //recycler
-//    private var layoutManager: RecyclerView.LayoutManager? = null
-//    private var adapter: RecyclerView.Adapter<MainAdapter.ViewHolder>?=null
-
     //all intent
     private lateinit var ivAdd: ImageView
-//    private lateinit var rvlastactivity: RecyclerView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        super.onStart()
         supportActionBar?.hide()
 
         //Intent
@@ -36,71 +35,113 @@ class MainActivity : AppCompatActivity() {
             val MainToCatatan = Intent(applicationContext, CatatanActivity::class.java)
             startActivity(MainToCatatan)
         }
-
-
-//        //set layout menjadi linear layout
-//        layoutManager = LinearLayoutManager(this)
-//
-//        //instance Recycler View
-//        var rvMain:RecyclerView = findViewById(R.id.rvLastActivity)
-//
-//        //setlayout untuk recycler view
-//        rvMain.layoutManager = layoutManager
-//
-//        //call adapter dan set recycler view sesuai adapter yang dibuat
-//        adapter = MainAdapter()
-//        rvMain.adapter = adapter
-
-
         modelAdapterMain()
-
 
     }
 
     private fun modelAdapterMain() {
-        val mains = listOf<MainModel>(
-            MainModel(
-                1,
-                R.drawable.document_signed,
-                "Seragam Organisasi",
-                "- Rp150.000",
-                "Januari 10 2022"
-            ),
-            MainModel(
-                2,
-                R.drawable.document_signed,
-                "Makan Bulanan",
-                "- Rp350.000",
-                "Februari 10 2022"
-            ),
-            MainModel(3, R.drawable.document_signed, "Gaji", "Rp10.000.000", "Maret 10 2022"),
-            MainModel(4, R.drawable.document_signed, "Qurban", "Rp3.000.000", "April 10 2022"),
-        )
-        val mainAdapter = AdapterImage(mains, object : AdapterImage.onAdapterListener {
+        val databaseHelper = DatabaseHelper(this)
+        val listData = databaseHelper.showMenuPemasukan()
+
+        val mainAdapter = AdapterImage(listData, object : AdapterImage.onAdapterListener {
+            @SuppressLint("RestrictedApi")
             override fun onClick(main: MainModel) {
                 Log.e("MainActivity", main.toString())
                 Toast.makeText(applicationContext, main.nama.toString(), Toast.LENGTH_SHORT).show()
 
                 startActivity(
                     Intent(applicationContext, DetailActivity::class.java)
-                        .putExtra("tvJudul", main.nama)
-                        .putExtra("intent_nominal", main.nominal)
-                        .putExtra("intent_tanggal", main.tanggal)
-//                        .putExtra("intent_image", main.)
+                        //batas
+                        .putExtra("COLUMN_ID_IN", main.id)
+                        .putExtra("COLUMN_IMAGE_IN", main.image)
+                        .putExtra("COLUMN_JUDUL_IN", main.nama)
+                        .putExtra("COLUMN_NOMINAL_IN", main.nominal)
+                        .putExtra("COLUMN_WAKTU_IN", main.tanggal)
+                        .putExtra("COLUMN_KETERANGAN_IN", main.keterangan)
+
+//                        .putExtra("COLUMN_ID_OUT", main.id)
+//                        .putExtra("COLUMN_IMAGE_OUT", main.image)
+//                        .putExtra("COLUMN_JUDUL_OUT", main.nama)
+//                        .putExtra("COLUMN_NOMINAL_OUT", main.nominal)
+//                        .putExtra("COLUMN_WAKTU_OUT", main.tanggal)
+//                        .putExtra("COLUMN_KETERANGAN_OUT", main.keterangan)
 
                 )
             }
 
+//            override fun onDelete(main: MainModel) {
+//                deleteDatabase("COLUMN_ID_IN")
+//            }
+
+//            override fun onUpdate(main: MainModel) {
+//                intenEdit()
+//            }
         })
         findViewById<RecyclerView>(R.id.rvLastActivity).apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = LinearLayoutManager(applicationContext)
             adapter = mainAdapter
         }
 
     }
 
-
 }
+
+//    private fun modelAdapterMainPengeluaran() {
+//        val databaseHelper = DatabaseHelper(this)
+//        val listData = databaseHelper.showMenuPengeluaran()
+//
+//        val catatanAdapter = AdapterImage(listData, object : AdapterImage.onAdapterListener {
+//            override fun onClick(catatan: MainModel) {
+//                Log.e("CatatanActivity", catatan.toString())
+//                Toast.makeText(applicationContext, catatan.nama.toString(), Toast.LENGTH_SHORT).show()
+//
+//
+//                startActivity(
+//                    Intent(applicationContext, DetailActivity::class.java)
+//                        .putExtra("COLUMN_ID_OUT", catatan.id)
+//                        .putExtra("COLUMN_IMAGE_OUT", catatan.image)
+//                        .putExtra("COLUMN_JUDUL_OUT", catatan.nama)
+//                        .putExtra("COLUMN_NOMINAL_OUT", catatan.nominal)
+//                        .putExtra("COLUMN_WAKTU_OUT", catatan.tanggal)
+//                        .putExtra("COLUMN_KETERANGAN_OUT", catatan.keterangan)
+//
+//
+//                )
+//            }
+//        })
+//        findViewById<RecyclerView>(R.id.rvCatatan).apply {
+//            layoutManager = LinearLayoutManager(this@MainActivity)
+//            adapter = catatanAdapter
+//        }
+//
+//    }
+
+
+//    private fun getDataFromApi() {
+//        ProgressBar.visibility = View.VISIBLE
+//        ApiService.endpoint.getData()
+//            .enqueue(object : Callback<MainModel> {
+//                override fun onFailure(call: Call<MainModel>, t:Throwable) {
+//                    ProgressBar.visibility = View.GONE
+//                    printlog( "onFailure: $t" )
+//                }
+//
+//                override fun onResponse(
+//                    call: Call<MainModel>,
+//                    response: Response<MainModel>
+//                ) {
+//                    ProgressBar.visibility = View.GONE
+//                    if (response.isSuccessful) {
+//                        showData(response.body()!!)
+//                    }
+//                }
+//            })
+//    }
+//
+//    private fun printlog(message: String) {
+//        Log.d(Tag, message)
+//    }
+
 
 //    private fun imageAdapter() {
 //
