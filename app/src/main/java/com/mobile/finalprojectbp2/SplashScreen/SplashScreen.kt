@@ -13,7 +13,7 @@ import com.mobile.finalprojectbp2.R
 class SplashScreen : AppCompatActivity() {
 
     //declaring a null variable for MediaController
-    private val SplashScreenTime: Long = 10000 //2 detik
+    private val SplashScreenTime: Long = 2000 //2 detik
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

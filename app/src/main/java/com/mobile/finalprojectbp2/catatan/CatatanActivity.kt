@@ -24,8 +24,8 @@ class CatatanActivity : AppCompatActivity() {
 
     //all intent
     private lateinit var ivback: ImageView
-    private lateinit var imagedetail: ImageView
-    private lateinit var gambar: ByteArray
+//    private lateinit var imagedetail: ImageView
+//    private lateinit var gambar: ByteArray
 
     private lateinit var Pemasukan: RadioButton
     private lateinit var Pengeluaran: RadioButton
