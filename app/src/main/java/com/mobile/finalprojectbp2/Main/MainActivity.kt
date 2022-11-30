@@ -2,10 +2,14 @@ package com.mobile.finalprojectbp2.Main
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,14 +18,20 @@ import com.mobile.finalprojectbp2.catatan.CatatanActivity
 import com.mobile.finalprojectbp2.database.DatabaseHelper
 //import com.mobile.finalprojectbp2.catatan.CatatanActivity
 import com.mobile.finalprojectbp2.detail.DetailActivity
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 
 class MainActivity : AppCompatActivity() {
 
     //all intent
     private lateinit var ivAdd: ImageView
+    private lateinit var date: TextView
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,6 +46,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(MainToCatatan)
         }
         modelAdapterMain()
+
+        //Set datetime
+        date = findViewById(R.id.tvMainTgl)
+        val currentTime =  LocalDateTime.now()
+        val formatTime = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)
+        val time = currentTime.format(formatTime)
+        date.setText(time)
 
     }
 

@@ -1,18 +1,22 @@
 package com.mobile.finalprojectbp2.tambah
 
-import android.content.ContentValues
+//import com.mobile.finalprojectbp2.detail.AdapterDetail
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.mobile.finalprojectbp2.R
 import com.mobile.finalprojectbp2.catatan.CatatanActivity
 import com.mobile.finalprojectbp2.database.DatabaseHelper
-//import com.mobile.finalprojectbp2.detail.AdapterDetail
-import java.lang.StringBuilder
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
+import java.util.*
 
 class TambahActivity : AppCompatActivity(){
 
@@ -35,6 +39,7 @@ class TambahActivity : AppCompatActivity(){
         val IMAGE_REQUEST_CODE = 100
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah)
@@ -64,8 +69,18 @@ class TambahActivity : AppCompatActivity(){
         ivaddimage = findViewById(R.id.ivAddImageTbh)
         btnSave = findViewById(R.id.btnTbhSave)
 
+
+        //Set datetime
+        etTanggalin = findViewById(R.id.etTglTbhIn)
+        val currentTime =  LocalDateTime.now()
+        val formatTime = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)
+        val time = currentTime.format(formatTime)
+        etTanggalin.setText(time)
+
+
 //        onRadioButtonClicked(Pemasukan)
 //        onRadioButtonClicked(Pengeluaran)
+
     }
 
     fun onRadioButtonClicked(view: View) {
@@ -104,6 +119,14 @@ class TambahActivity : AppCompatActivity(){
             }
         }
     }
+
+//    private fun calculateTotal(productDataSet: ProductDataSet): Double {
+//        var totalPrice = 0.0
+//        for (i in 0 until productDataSet.size()) {
+//            totalPrice += productDataSet.get(i).getPrice()
+//        }
+//        return totalPrice
+//    }
 
     private fun AddPengeluaran() {
         ivaddimage.setOnClickListener {

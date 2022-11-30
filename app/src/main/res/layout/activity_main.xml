@@ -74,12 +74,12 @@
                         app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/TotalDuit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/arlrdbd"
-                        android:text="Rp1.000.000"
+                        android:text="Y - X"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -137,12 +137,12 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/tvMainTgl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/arlrdbd"
-                        android:text="June 2022"
+                        android:text="Date"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -210,12 +210,12 @@
                         app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/Income"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/arlrdbd"
-                        android:text="Rp2.000.000"
+                        android:text="Y"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -231,17 +231,17 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/textView11"
+                        app:layout_constraintStart_toStartOf="@+id/Income"
                         app:layout_constraintTop_toTopOf="@+id/imageView6"
                         tools:ignore="MissingConstraints" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/Cost"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/arlrdbd"
-                        android:text="Rp1.000.000"
+                        android:text="X"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"

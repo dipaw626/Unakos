@@ -20,13 +20,13 @@
             android:name=".detail.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".tambah.TambahActivity"
+            android:name=".SplashScreen.SplashScreen"
             android:exported="false" />
         <activity
             android:name=".catatan.CatatanActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen.SplashScreen"
+            android:name=".tambah.TambahActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
