@@ -240,8 +240,8 @@
 
             <ImageView
                 android:id="@+id/ivDetailbukti"
-                android:layout_width="188dp"
-                android:layout_height="155dp"
+                android:layout_width="255dp"
+                android:layout_height="261dp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

@@ -128,7 +128,7 @@ class DatabaseHelper(var context: Context): SQLiteOpenHelper(
         //prepare image
         val byteOutputStream = ByteArrayOutputStream()
         val imageInByte: ByteArray
-        tambah.image.compress(Bitmap.CompressFormat.JPEG,100,byteOutputStream)
+        tambah.image.compress(Bitmap.CompressFormat.JPEG,45,byteOutputStream)
         imageInByte = byteOutputStream.toByteArray()
         values.put(COLUMN_IMAGE_IN, imageInByte)
 
@@ -156,7 +156,7 @@ class DatabaseHelper(var context: Context): SQLiteOpenHelper(
         //prepare image
         val byteOutputStream = ByteArrayOutputStream()
         val imageInByte: ByteArray
-        tambah.image.compress(Bitmap.CompressFormat.JPEG,100,byteOutputStream)
+        tambah.image.compress(Bitmap.CompressFormat.JPEG,45,byteOutputStream)
         imageInByte = byteOutputStream.toByteArray()
         values.put(COLUMN_IMAGE_OUT, imageInByte)
 
