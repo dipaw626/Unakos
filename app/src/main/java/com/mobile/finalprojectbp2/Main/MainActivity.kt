@@ -86,13 +86,6 @@ class MainActivity : AppCompatActivity() {
                 )
             }
 
-//            override fun onDelete(main: MainModel) {
-//                deleteDatabase("COLUMN_ID_IN")
-//            }
-
-//            override fun onUpdate(main: MainModel) {
-//                intenEdit()
-//            }
         })
         findViewById<RecyclerView>(R.id.rvLastActivity).apply {
             layoutManager = LinearLayoutManager(applicationContext)
