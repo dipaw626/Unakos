@@ -163,7 +163,7 @@
                 android:layout_marginStart="155dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="70dp"
-                android:inputType="text"
+                android:inputType="number"
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/id"

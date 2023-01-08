@@ -3,6 +3,7 @@ package com.mobile.finalprojectbp2.database
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.CursorWindow
 import android.database.sqlite.SQLiteDatabase
@@ -10,7 +11,9 @@ import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.graphics.Bitmap
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.mobile.finalprojectbp2.Main.MainModel
+import com.mobile.finalprojectbp2.catatan.CatatanActivity
 import com.mobile.finalprojectbp2.tambah.tambahModel
 import java.io.ByteArrayOutputStream
 import java.lang.reflect.Field
@@ -274,6 +277,11 @@ class DatabaseHelper(var context: Context): SQLiteOpenHelper(
     fun deleteIDout(id: String): Boolean {
         return writableDatabase.delete(TABLE_PENGELUARAN, COLUMN_ID_OUT.toString() + "=?", arrayOf(id)) > 0
     }
+
+//    fun intent() {
+//        Toast.makeText(this@DatabaseHelper, "Delete Success ", Toast.LENGTH_SHORT).show()
+//        startActivity(Intent(this@DatabaseHelper, CatatanActivity::class.java))
+//    }
 
 //    @SuppressLint("Range")
 //    fun showMenuAll(): ArrayList<MainModel> {

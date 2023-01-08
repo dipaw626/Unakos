@@ -145,6 +145,7 @@ class TambahActivity : AppCompatActivity(){
 
             val tambahModel = tambahModel(id, name, nominal,tgl, note, bitmap)
             databaseHelper.addTambahPengeluaran(tambahModel)
+            startActivity(Intent(this@TambahActivity, CatatanActivity::class.java))
         }
     }
 
@@ -165,6 +166,7 @@ class TambahActivity : AppCompatActivity(){
 
             val tambahModel = tambahModel(id, name, nominal,tgl, note, bitmap)
             databaseHelper.addTambahPemasukan(tambahModel)
+            startActivity(Intent(this@TambahActivity, CatatanActivity::class.java))
         }
     }
 

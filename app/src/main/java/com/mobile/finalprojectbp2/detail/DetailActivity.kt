@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.mobile.finalprojectbp2.Main.MainActivity
 import com.mobile.finalprojectbp2.R
+import com.mobile.finalprojectbp2.catatan.CatatanActivity
 import com.mobile.finalprojectbp2.database.DatabaseHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -55,7 +56,7 @@ class DetailActivity : AppCompatActivity() {
 
         //intent
         btnback.setOnClickListener{
-            val intent = Intent(this@DetailActivity, MainActivity::class.java)
+            val intent = Intent(this@DetailActivity, CatatanActivity::class.java)
             startActivity(intent)
         }
 
@@ -160,7 +161,6 @@ class DetailActivity : AppCompatActivity() {
     fun deleteIn() {
         val db = DatabaseHelper(this)
         val dialog = AlertDialog.Builder(this)
-
         dialog.apply {
             setTitle("Konfirmasi Hapus")
             setMessage("Yakin hapus "+ namain + " ?")
@@ -170,6 +170,7 @@ class DetailActivity : AppCompatActivity() {
             setPositiveButton("Hapus") { dialogInterface, i ->
                 CoroutineScope(Dispatchers.IO).launch {
                     db.deleteIDin(idin.toString())
+                    finish()
 //                    Toast.makeText(application, "Delete Success ", Toast.LENGTH_SHORT).show()
                     dialogInterface.dismiss()
 
@@ -183,7 +184,6 @@ class DetailActivity : AppCompatActivity() {
     fun deleteOut() {
         val db = DatabaseHelper(this)
         val dialog = AlertDialog.Builder(this)
-
         dialog.apply {
             setTitle("Konfirmasi Hapus")
             setMessage("Yakin hapus "+ namaout + " ?")
@@ -193,6 +193,7 @@ class DetailActivity : AppCompatActivity() {
             setPositiveButton("Hapus") { dialogInterface, i ->
                 CoroutineScope(Dispatchers.IO).launch {
                     db.deleteIDout(idout.toString())
+                    finish()
 //                    Toast.makeText(this, "Delete Success ", Toast.LENGTH_SHORT).show()
                     dialogInterface.dismiss()
 
